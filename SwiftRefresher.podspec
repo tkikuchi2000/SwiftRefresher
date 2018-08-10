@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftRefresher"
-  s.version      = "0.9.0"
+  s.version      = "0.9.3"
   s.summary      = "SwiftRefresher is one of the alternatives of UIRefreshControl."
   s.description  = <<-DESC
                     - Simple and easy to use.
