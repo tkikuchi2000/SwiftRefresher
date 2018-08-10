@@ -9,7 +9,7 @@
 import UIKit
 
 private let DEFAULT_ACTIVITY_INDICATOR_VIEW_STYLE: UIActivityIndicatorViewStyle = .gray
-private let DEFAULT_PULLING_IMAGE: UIImage? = {
+public let DEFAULT_PULLING_IMAGE: UIImage? = {
     if let imagePath = Bundle(for: SimpleRefreshView.self).path(forResource: "pull", ofType: "png") {
         return UIImage(contentsOfFile: imagePath)
     }
