@@ -28,7 +28,7 @@ public extension UIScrollView {
     }
     
     fileprivate func srf_findRefreshers() -> [Refresher]? {
-        return subviews.filter { $0 is Refresher }.flatMap { $0 as? Refresher }
+        return subviews.filter { $0 is Refresher }.compactMap{ $0 as? Refresher}
     }
 }
 
