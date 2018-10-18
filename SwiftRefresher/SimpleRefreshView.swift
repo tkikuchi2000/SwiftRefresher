@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let DEFAULT_ACTIVITY_INDICATOR_VIEW_STYLE: UIActivityIndicatorViewStyle = .gray
+private let DEFAULT_ACTIVITY_INDICATOR_VIEW_STYLE: UIActivityIndicatorView.Style = .gray
 public let DEFAULT_PULLING_IMAGE: UIImage? = {
     if let imagePath = Bundle(for: SimpleRefreshView.self).path(forResource: "pull", ofType: "png") {
         return UIImage(contentsOfFile: imagePath)
@@ -23,7 +23,7 @@ open class SimpleRefreshView: UIView, SwfitRefresherEventReceivable {
     fileprivate var activityIndicatorViewStyle = DEFAULT_ACTIVITY_INDICATOR_VIEW_STYLE
     fileprivate var pullingImage: UIImage?
     
-    public convenience init(activityIndicatorViewStyle: UIActivityIndicatorViewStyle, pullingImage: UIImage? = DEFAULT_PULLING_IMAGE) {
+    public convenience init(activityIndicatorViewStyle: UIActivityIndicatorView.Style, pullingImage: UIImage? = DEFAULT_PULLING_IMAGE) {
         self.init(frame: CGRect.zero)
         self.activityIndicatorViewStyle = activityIndicatorViewStyle
         self.pullingImage = pullingImage
@@ -41,7 +41,7 @@ open class SimpleRefreshView: UIView, SwfitRefresherEventReceivable {
     }
     
     fileprivate func commonInit() {
-        let aView = UIActivityIndicatorView(activityIndicatorStyle: activityIndicatorViewStyle)
+        let aView = UIActivityIndicatorView(style: activityIndicatorViewStyle)
         aView.hidesWhenStopped = true
         addSubview(aView)
         aView.translatesAutoresizingMaskIntoConstraints = false
